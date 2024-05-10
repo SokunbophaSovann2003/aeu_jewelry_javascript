@@ -1,8 +1,7 @@
 <template>
-
+  <TheHeader/>
   <div class="ring-detail">
     <div class="container m-auto">
-
       <div class="font-[sans-serif] bg-white">
       <div class="p-6 lg:max-w-7xl max-w-4xl mx-auto">
         <div class="grid items-start grid-cols-1 lg:grid-cols-5 gap-12 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] p-6">
@@ -244,9 +243,13 @@
       </div>
     </div>
   </div>
+  <TheFooter/>
 </template>
 
 <script setup>
+
+import TheHeader from '@/components/TheHeader.vue';
+import TheFooter from '@/components/TheFooter.vue';
  
  const rings = [
   {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/W10028-Y-1_480x.jpg?v=1684836802'},

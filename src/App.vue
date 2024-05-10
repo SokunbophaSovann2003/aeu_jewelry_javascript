@@ -2,26 +2,28 @@
 
 <script setup>
 // import { RouterLink, RouterView } from 'vue-router'
-import TheHeader from './components/TheHeader.vue'
-import TheFooter from './components/TheFooter.vue'
+// import TheHeader from './components/TheHeader.vue'
+// import TheFooter from './components/TheFooter.vue'
 </script>
+
+
 
 <template>
   <!-- <header>
     <h1>hii</h1> -->
     <!-- test -->
-    <div class="wrapper">
-      <TheHeader  />
+    <!-- <div class="wrapper">
+      <TheHeader  /> -->
      
       <!-- <nav> -->
         <!-- <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink> -->
       <!-- </nav> -->
-    </div>
+    <!-- </div> -->
     <!-- </header> -->
     
     <RouterView />
-    <TheFooter  />
+    <!-- <TheFooter  /> -->
 </template>
 
 <style scoped>

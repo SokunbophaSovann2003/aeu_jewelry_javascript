@@ -1,350 +1,216 @@
 <script setup>
-import TheSlider from "../components/TheSlider.vue";
+  import TheFooter from '@/components/TheFooter.vue';
+  import TheHeader from '@/components/TheHeader.vue';
 </script>
 
 <template>
-  <main>
-    <TheSlider />
+  <main class="dark bg-white relative overflow-scroll h-screen">
+    <TheHeader/>
+    <div class="bg-white dark flex z-20 items-center h-screen overflow-hidden">
+      <div class="container mx-auto px-6 flex relative py-16">
+        <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
+          <span class="w-20 h-2 bg-white mb-12">
+          </span>
+          <h1
+            class="font-bebas-neue uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none text-black text-gray-800">
+            Show your Power
+          </h1>
+          <p class="text-sm sm:text-base text-gray-700 text-black">
+            Dimension of reality that makes change possible and understandable. An indefinite and homogeneous
+            environment in which natural events and human existence take place.
+          </p>
+        </div>
+        <div class="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
+          <img src="https://www.tailwind-kit.com/images/object/10.png" class="max-w-xs md:max-w-sm m-auto" />
+        </div>
+      </div>
+    </div>
+    <!-- ============================================================================================ -->
+    <div class="relative h-screen items-center justify-center flex">
+      <div>
+        <div aria-hidden="true" class="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+          <div class="blur-[106px] h-56 bg-gradient-to-br from-teal-500 to-purple-400 dark:from-blue-700"></div>
+          <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+        </div>
 
-    <section class="bg-white">
-      <div class="py-4 px-2 mx-auto max-w-screen-xl sm:py-4 lg:px-6">
-        <div
-          class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 h-full"
-        >
-          <div
-            class="col-span-2 sm:col-span-1 md:col-span-2 bg-gray-50 h-auto md:h-full flex flex-col"
-          >
-            <a
-              href=""
-              class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow"
-            >
-              <img
-                src="https://res.cloudinary.com/kendra-scott/image/upload/e_sharpen:90/q_auto,f_auto,dpr_auto/v1713988552/homepage-imageuploader/Spring%203%20%2B%20Mother%27s%20Day%202024/Rectangle_1_61.jpg"
-                alt=""
-                class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"
-              ></div>
-              <h3
-                class="z-10 text-xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-2xl"
-              >
-                Under 2,000$
-              </h3>
-            </a>
-          </div>
-          <div class="col-span-2 sm:col-span-1 md:col-span-2 bg-stone-50">
-            <a
-              href=""
-              class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 mb-4"
-            >
-              <img
-                src="https://kisna.com/cdn/shop/files/2_efa68622-ae10-41b9-8cc2-1e4d73549986_1024x.jpg?v=1713358079"
-                alt=""
-                class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"
-              ></div>
-              <h3
-                class="z-10 text-xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-2xl"
-              >
-                Under 6,000$
-              </h3>
-            </a>
-            <div class="grid gap-4 grid-cols-2 sm:grid-cols-2 lg:grid-cols-2">
-              <a
-                href=""
-                class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40"
-              >
-                <img
-                  src="https://www.vibella.com/cdn/shop/products/Uranise_460x.jpg?v=1623693844"
-                  alt=""
-                  class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"
-                ></div>
-                <h3
-                  class="z-10 text-xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-2xl"
-                >
-                  Under 12,000$
-                </h3>
-              </a>
-              <a
-                href=""
-                class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40"
-              >
-                <img
-                  src="https://res.cloudinary.com/kendra-scott/image/upload/e_sharpen:80/q_auto,f_auto,dpr_auto/v1711577535/homepage-imageuploader/Spring%203%20%2B%20Mother%27s%20Day%202024/rings_webflat.jpg"
-                  alt=""
-                  class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-                />
-                <div
-                  class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"
-                ></div>
-                <h3
-                  class="z-10 text-xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-2xl"
-                >
-                  Under 8,000$
-                </h3>
-              </a>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+          <div class="relative">
+            <div class="mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12">
+              <h1 class="text-center text-4xl font-bold text-gray-800  md:text-5xl">Get Started now
+              </h1>
+              <p class="text-center text-xl text-gray-600 ">
+                Be part of millions people around the world using tailus in modern User Interfaces.
+              </p>
+              <div class="flex flex-wrap justify-center gap-6">
+                <a href="#"
+                  class="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:bg-teal-500 before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 sm:w-max">
+                  <span class="relative text-base font-semibold dark:text-dark">Get Started</span>
+                </a>
+                <a href="#"
+                  class="relative flex h-12 w-full items-center justify-center px-8 before:absolute before:inset-0 before:rounded-full before:border before:border-transparent before:bg-teal-500/10 before:bg-gradient-to-b before:transition before:duration-300 hover:before:scale-105 active:duration-75 active:before:scale-95 dark:before:border-gray-700 dark:before:bg-gray-800 sm:w-max">
+                  <span class="relative text-base font-semibold text-teal-500 dark:text-white">More about</span>
+                </a>
+              </div>
             </div>
           </div>
-          <div
-            class="col-span-2 sm:col-span-1 md:col-span-1 bg-sky-50 h-auto md:h-full flex flex-col"
-          >
-            <a
-              href=""
-              class="group relative flex flex-col overflow-hidden rounded-lg px-4 pb-4 pt-40 flex-grow"
-            >
-              <img
-                src="https://kisna.com/cdn/shop/files/W10294-Y-1_1800x1800_97e67197-4a23-40ae-9267-b2c6f04f553a_400x.webp?v=1703142436"
-                alt=""
-                class="absolute inset-0 h-full w-full object-cover group-hover:scale-105 transition-transform duration-500 ease-in-out"
-              />
-              <div
-                class="absolute inset-0 bg-gradient-to-b from-gray-900/25 to-gray-900/5"
-              ></div>
-              <h3
-                class="z-10 text-xl font-medium text-white absolute top-0 left-0 p-4 xs:text-xl md:text-2xl"
-              >
-                Under 22,000$
-              </h3>
+        </div>
+
+
+
+        
+      </div>
+    </div>
+    <!-- ============================================================================================ -->
+    <section class="text-gray-600 h-screen items-center justify-center flex body-font bg-white">
+      <div class="container mx-auto flex md:px-24 md:py-10 md:flex-row flex-col items-center">
+        <div
+          class="lg:flex-grow mt-5 md:mt-0   md:w-1.5/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1
+            class="text-2xl font-extrabold leading-9 tracking-tight mb-3 text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-normal">
+            Title of Project
+          </h1>
+          <p class="mb-8 md:pl-0  pl-2 pr-2 leading-relaxed dark:text-gray-300">
+            Short description here, Short description here Short description here Short description here Short
+            description here Short description here.
+          </p>
+          <div class="flex justify-center">
+            <a href="#"
+              class="inline-flex text-white bg-emerald-600 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-600 rounded text-lg">Start
+              Exploring
+            </a>
+          </div>
+        </div>
+        <div class="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
+          <img class="object-cover object-center rounded" alt="hero"
+            src="https://www.svgrepo.com/show/490900/hot-air-balloon.svg">
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 h-screen items-center justify-center flex body-font bg-white">
+      <div class="container mx-auto flex md:px-24 md:py-10 md:flex-row flex-col items-center">
+        <div class="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
+          <img class="object-cover object-center rounded" alt="hero"
+            src="https://www.svgrepo.com/show/490900/hot-air-balloon.svg">
+        </div>
+        <div
+          class="lg:flex-grow mt-9 md:w-1.5/2 lg:pr-24 md:pl-16 flex flex-col md:items-end md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1
+            class="text-2xl font-extrabold leading-9 tracking-tight mb-3 text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-normal">
+            Title of Project
+          </h1>
+          <p class="mb-8 md:pl-0 text-right pl-2 pr-2 leading-relaxed dark:text-gray-300">
+            Short description here, Short description here Short description here Short description here Short
+            description here Short description here.
+          </p>
+          <div class="flex justify-center">
+            <a href="#"
+              class="inline-flex text-white bg-emerald-600 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-600 rounded text-lg">Start
+              Exploring
             </a>
           </div>
         </div>
       </div>
     </section>
-
-    <div class="container m-auto">
-      <div class="title font-bold text-center text-2xl">
-        <h3>Shop Category</h3>
-      </div>
-      <div class="test mt-4 mb-5 grid grid-cols-5">
-        <div class="image">
-          <img
-            class="w-[100%] h-auto max-w-full"
-            src="https://images-aka.kayoutlet.com/kayoutlet/homepage/FY23/6.21/ko_WMJ-23-007590_trigger_engagement.jpg"
-            alt="image description"
-          />
-        </div>
-        <div class="image">
-          <img
-            class="w-[100%] h-auto max-w-full"
-            src="https://images-aka.kayoutlet.com/kayoutlet/homepage/FY23/6.21/ko_WMJ-23-007590_trigger_earrings.jpg"
-            alt="image description"
-          />
-        </div>
-        <div class="image">
-          <img
-            class="w-[100%] h-auto max-w-full"
-            src="https://images-aka.kayoutlet.com/kayoutlet/homepage/FY23/6.21/ko_WMJ-23-007590_trigger_wedding.jpg"
-            alt="image description"
-          />
-        </div>
-        <div class="image">
-          <img
-            class="w-[100%] h-auto max-w-full"
-            src="https://images-aka.kayoutlet.com/kayoutlet/homepage/FY23/6.21/ko_WMJ-23-007590_trigger_necklaces.jpg"
-            alt="image description"
-          />
-        </div>
-        <div class="image">
-          <img
-            class="w-[100%] h-auto max-w-full"
-            src="https://images-aka.kayoutlet.com/kayoutlet/homepage/FY23/6.23/trigger_rings.jpg"
-            alt="image description"
-          />
-        </div>
-      </div>
-      <div class="mt-4 mb-5 grid grid-cols-2 gap-4">
-        <div class="image">
-          <img
-            class="w-[100%] h-80 max-w-full"
-            src="@/assets/images/image3.jpg"
-            alt="image description"
-          />
-          <div class="py-4 text-center font-bold">
-            <h2>30% OFF</h2>
+    <section class="text-gray-600 h-screen items-center justify-center flex body-font bg-white">
+      <div class="container mx-auto flex md:px-24 md:py-10 md:flex-row flex-col items-center">
+        <div
+          class="lg:flex-grow mt-5 md:mt-0   md:w-1.5/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1
+            class="text-2xl font-extrabold leading-9 tracking-tight mb-3 text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-normal">
+            Title of Project
+          </h1>
+          <p class="mb-8 md:pl-0  pl-2 pr-2 leading-relaxed dark:text-gray-300">
+            Short description here, Short description here Short description here Short description here Short
+            description here Short description here.
+          </p>
+          <div class="flex justify-center">
+            <a href="#"
+              class="inline-flex text-white bg-emerald-600 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-600 rounded text-lg">Start
+              Exploring
+            </a>
           </div>
         </div>
-        <div class="image">
-          <img
-            class="w-[100%] h-80 max-w-full"
-            src="@/assets/images/image4.jpg"
-            alt="image description"
-          />
-          <div class="py-4 text-center font-bold">
-            <h2>40% OFF</h2>
+        <div class="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
+          <img class="object-cover object-center rounded" alt="hero"
+            src="https://www.svgrepo.com/show/490900/hot-air-balloon.svg">
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 h-screen items-center justify-center flex body-font bg-white">
+      <div class="container mx-auto flex md:px-24 md:py-10 md:flex-row flex-col items-center">
+        <div class="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
+          <img class="object-cover object-center rounded" alt="hero"
+            src="https://www.svgrepo.com/show/490900/hot-air-balloon.svg">
+        </div>
+        <div
+          class="lg:flex-grow mt-9 md:w-1.5/2 lg:pr-24 md:pl-16 flex flex-col md:items-end md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1
+            class="text-2xl font-extrabold leading-9 tracking-tight mb-3 text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-normal">
+            Title of Project
+          </h1>
+          <p class="mb-8 md:pl-0 text-right pl-2 pr-2 leading-relaxed dark:text-gray-300">
+            Short description here, Short description here Short description here Short description here Short
+            description here Short description here.
+          </p>
+          <div class="flex justify-center">
+            <a href="#"
+              class="inline-flex text-white bg-emerald-600 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-600 rounded text-lg">Start
+              Exploring
+            </a>
           </div>
         </div>
       </div>
-
-      <div class="bg-white py-24 sm:py-32">
-        <div class="mx-auto max-w-7xl px-6 lg:px-8">
-          <div class="mx-auto max-w-2xl lg:max-w-none">
-            <div class="text-center">
-              <h2
-                class="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl"
-              >
-                Empowering Businesses Globally
-              </h2>
-              <p class="mt-4 text-lg leading-8 text-gray-600">
-                Our platform is trusted by organizations worldwide to boost
-                productivity, streamline operations, and enhance customer
-                experiences.
-              </p>
-            </div>
-            <dl
-              class="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4"
-            >
-              <div class="flex flex-col bg-gray-200/50 p-8">
-                <dt class="text-sm font-semibold leading-6 text-gray-600">
-                  Active Users
-                </dt>
-                <dd
-                  class="order-first text-3xl font-semibold tracking-tight text-gray-900"
-                >
-                  12,345
-                </dd>
-              </div>
-              <div class="flex flex-col bg-gray-200/50 p-8">
-                <dt class="text-sm font-semibold leading-6 text-gray-600">
-                  Transactions Today
-                </dt>
-                <dd
-                  class="order-first text-3xl font-semibold tracking-tight text-gray-900"
-                >
-                  1.23M
-                </dd>
-              </div>
-              <div class="flex flex-col bg-gray-200/50 p-8">
-                <dt class="text-sm font-semibold leading-6 text-gray-600">
-                  Total Revenue
-                </dt>
-                <dd
-                  class="order-first text-3xl font-semibold tracking-tight text-gray-900"
-                >
-                  $5.6B
-                </dd>
-              </div>
-              <div class="flex flex-col bg-gray-200/50 p-8">
-                <dt class="text-sm font-semibold leading-6 text-gray-600">
-                  Happy Customers
-                </dt>
-                <dd
-                  class="order-first text-3xl font-semibold tracking-tight text-gray-900"
-                >
-                  98%
-                </dd>
-              </div>
-            </dl>
+    </section>
+    <section class="text-gray-600 h-screen items-center justify-center flex body-font bg-white">
+      <div class="container mx-auto flex md:px-24 md:py-10 md:flex-row flex-col items-center">
+        <div
+          class="lg:flex-grow mt-5 md:mt-0   md:w-1.5/2 lg:pr-24 md:pr-16 flex flex-col md:items-start md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1
+            class="text-2xl font-extrabold leading-9 tracking-tight mb-3 text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-normal">
+            Title of Project
+          </h1>
+          <p class="mb-8 md:pl-0  pl-2 pr-2 leading-relaxed dark:text-gray-300">
+            Short description here, Short description here Short description here Short description here Short
+            description here Short description here.
+          </p>
+          <div class="flex justify-center">
+            <a href="#"
+              class="inline-flex text-white bg-emerald-600 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-600 rounded text-lg">Start
+              Exploring
+            </a>
+          </div>
+        </div>
+        <div class="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
+          <img class="object-cover object-center rounded" alt="hero"
+            src="https://www.svgrepo.com/show/490900/hot-air-balloon.svg">
+        </div>
+      </div>
+    </section>
+    <section class="text-gray-600 h-screen items-center justify-center flex body-font bg-white">
+      <div class="container mx-auto flex md:px-24 md:py-10 md:flex-row flex-col items-center">
+        <div class="lg:max-w-lg lg:w-full mb-5 md:mb-0 md:w-1/2 w-3/6">
+          <img class="object-cover object-center rounded" alt="hero"
+            src="https://www.svgrepo.com/show/490900/hot-air-balloon.svg">
+        </div>
+        <div
+          class="lg:flex-grow mt-9 md:w-1.5/2 lg:pr-24 md:pl-16 flex flex-col md:items-end md:text-left mb-16 md:mb-0 items-center text-center">
+          <h1
+            class="text-2xl font-extrabold leading-9 tracking-tight mb-3 text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-5xl md:leading-normal">
+            Title of Project
+          </h1>
+          <p class="mb-8 md:pl-0 text-right pl-2 pr-2 leading-relaxed dark:text-gray-300">
+            Short description here, Short description here Short description here Short description here Short
+            description here Short description here.
+          </p>
+          <div class="flex justify-center">
+            <a href="#"
+              class="inline-flex text-white bg-emerald-600 border-0 py-2 px-6 focus:outline-none hover:bg-emerald-600 rounded text-lg">Start
+              Exploring
+            </a>
           </div>
         </div>
       </div>
-
-      <!-- Best seller -->
-      <div class="title font-bold text-2xl text-center">
-        <h3>Best Seller</h3>
-      </div>
-      <div class="test mt-4 mb-5 grid grid-cols-5 gap-4">
-        <div class="card">
-          <div class="image">
-            <img
-              class="w-[100%] h-auto max-w-full"
-              src="@/assets/images/rectangle1.png"
-              alt="image description"
-            />
-          </div>
-          <div class="text-content py-2">
-            <div class="title text-center py-2">
-              <h3>Ring</h3>
-            </div>
-            <button
-              class="focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-gray-900 py-2 px-4 flex mx-auto"
-            >
-              Shop Now
-            </button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              class="w-[100%] h-auto max-w-full"
-              src="@/assets/images/rectangle2.png"
-              alt="image description"
-            />
-          </div>
-          <div class="text-content py-2">
-            <div class="title text-center py-2">
-              <h3>Ring</h3>
-            </div>
-            <button
-              class="focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-gray-900 py-2 px-4 flex mx-auto"
-            >
-              Shop Now
-            </button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              class="w-[100%] h-auto max-w-full"
-              src="@/assets/images/rectangle3.png"
-              alt="image description"
-            />
-          </div>
-          <div class="text-content py-2">
-            <div class="title text-center py-2">
-              <h3>Ring</h3>
-            </div>
-            <button
-              class="focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-gray-900 py-2 px-4 flex mx-auto"
-            >
-              Shop Now
-            </button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              class="w-[100%] h-auto max-w-full"
-              src="@/assets/images/rectangle4.png"
-              alt="image description"
-            />
-          </div>
-          <div class="text-content py-2">
-            <div class="title text-center py-2">
-              <h3>Ring</h3>
-            </div>
-            <button
-              class="focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-gray-900 py-2 px-4 flex mx-auto"
-            >
-              Shop Now
-            </button>
-          </div>
-        </div>
-        <div class="card">
-          <div class="image">
-            <img
-              class="w-[100%] h-auto max-w-full"
-              src="@/assets/images/rectangle5.png"
-              alt="image description"
-            />
-          </div>
-          <div class="text-content py-2">
-            <div class="title text-center py-2">
-              <h3>Ring</h3>
-            </div>
-            <button
-              class="focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-gray-900 py-2 px-4 flex mx-auto"
-            >
-              Shop Now
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
+    </section>
+    <TheFooter/>
   </main>
 </template>

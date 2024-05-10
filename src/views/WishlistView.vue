@@ -1,149 +1,81 @@
+<script setup>
+import TheFooter from '@/components/TheFooter.vue';
+import TheHeader from '@/components/TheHeader.vue';
+</script>
+
+
+<script>
+import { onProductDetail } from '@/funcations/function';
+
+export default {
+  data() {
+    const data = localStorage.getItem("wishlist");
+        const wishlistData = JSON.parse(data);
+        console.log("My wishlist iss ", wishlistData);
+        return {
+            products: wishlistData,
+        };
+  },
+  methods: {
+    onDetail(data) {
+      onProductDetail(data);
+      this.$router.push("/detail");
+      window.scrollTo(0, 0);
+    },
+  }
+  
+};
+</script>
+
 <template>
-  <div class="about">
-    <div class="container m-auto">
-      <div class="title font-bold text-center text-2xl">
-        <h3>Favorites</h3>
-      </div>
-      <div  class="mt-4 mb-5 grid grid-cols-5 gap-4">
-        
-        <div v-for="(ring,index) in rings" :key="index"
-          class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-200 dark:border-gray-200"
-        >
-          <a href="/ring-detail">
-            <img
-              class="h-72 p-1 rounded-t-lg"
-              :src="ring.image"
-              alt="product image"
-            />
-          </a>
-          <div class="px-5 pb-5">
-            <RouterLink to="/ring-detail">
-              <h5
-                class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
-              >
-               
-                {{ ring.title }}
-              </h5>
-              <p
-                class="text-xl  tracking-tight text-gray-800 dark:text-white"
-              >
-               
-                {{ ring.desc }}
-            </p>
-            </RouterLink>
-            <!-- <div class="flex items-center mt-2.5 mb-5">
-              <div class="flex items-center space-x-1 rtl:space-x-reverse">
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-yellow-300"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                  />
-                </svg>
-                <svg
-                  class="w-4 h-4 text-gray-200 dark:text-gray-600"
-                  aria-hidden="true"
-                  xmlns="http://www.w3.org/2000/svg"
-                  fill="currentColor"
-                  viewBox="0 0 22 20"
-                >
-                  <path
-                    d="M20.924 7.625a1.523 1.523 0 0 0-1.238-1.044l-5.051-.734-2.259-4.577a1.534 1.534 0 0 0-2.752 0L7.365 5.847l-5.051.734A1.535 1.535 0 0 0 1.463 9.2l3.656 3.563-.863 5.031a1.532 1.532 0 0 0 2.226 1.616L11 17.033l4.518 2.375a1.534 1.534 0 0 0 2.226-1.617l-.863-5.03L20.537 9.2a1.523 1.523 0 0 0 .387-1.575Z"
-                  />
-                </svg>
-              </div>
-              <span
-                class="bg-blue-100 text-blue-800 text-xs font-semibold px-2.5 py-0.5 rounded dark:bg-blue-200 dark:text-blue-800 ms-3"
-                >5.0</span
-              >
-            </div> -->
-            <div class="flex items-center justify-between">
-              <span class="text-2xl font-bold text-gray-900 dark:text-white"
-                >${{ ring.price }}</span
-              >
-              <a
-                href="#"
-                class=" font-medium text-sm px-5 py-2.5 text-center focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-gray-900"
-                >Show Now</a
-              >
+  <main class="dark bg-white relative overflow-scroll h-screen">
+    <TheHeader />
+    <!-- ============================================================================================ -->
+    <div class="relative h-screen items-center justify-center flex">
+      <div>
+        <div aria-hidden="true"
+          class="absolute inset-0 h-max w-full m-auto grid grid-cols-2 -space-x-52 opacity-40 dark:opacity-20">
+          <div class="blur-[106px] h-56 bg-gradient-to-br from-teal-500 to-purple-400 dark:from-blue-700"></div>
+          <div class="blur-[106px] h-32 bg-gradient-to-r from-cyan-400 to-sky-300 dark:to-indigo-600"></div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 md:px-12 xl:px-6">
+          <div class="relative">
+            <div class="mt-6 m-auto space-y-6 md:w-8/12 lg:w-7/12">
+              <h1 class="text-center text-4xl font-bold text-gray-800  md:text-5xl">My Wishlist
+              </h1>
+              <p class="text-center text-xl text-gray-600 ">
+                Be part of millions people around the world using tailus in modern User Interfaces.
+              </p>
             </div>
           </div>
         </div>
-        
       </div>
     </div>
-  </div>
+    <!-- ============================================================================================ -->
+    <section id="Projects"
+      class="w-fit mx-auto grid grid-cols-1 lg:grid-cols-3 md:grid-cols-2 justify-items-center justify-center gap-y-20 gap-x-14 mt-10 mb-5">
+
+      <div v-for="(product, index) in products" :key="index"
+        class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
+        <button @click="onDetail(product)">
+          <img :src="product.image" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
+          <div class="px-4 py-3 w-72 text-start">
+            <span class="text-gray-400 mr-3 uppercase text-xs items-start">{{ product.brand }}</span>
+            <p class="text-lg font-bold text-black truncate block capitalize">{{ product.title }}</p>
+            <div class="flex items-center">
+              <p class="text-lg font-semibold text-black cursor-auto my-3">${{ product.price }}</p>
+              <div class="ml-auto"><svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                  class="bi bi-bag-plus" viewBox="0 0 16 16">
+                  <path fill-rule="evenodd"
+                    d="M8 7.5a.5.5 0 0 1 .5.5v1.5H10a.5.5 0 0 1 0 1H8.5V12a.5.5 0 0 1-1 0v-1.5H6a.5.5 0 0 1 0-1h1.5V8a.5.5 0 0 1 .5-.5z" />
+                  <path
+                    d="M8 1a2.5 2.5 0 0 1 2.5 2.5V4h-5v-.5A2.5 2.5 0 0 1 8 1zm3.5 3v-.5a3.5 3.5 0 1 0-7 0V4H1v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V4h-3.5zM2 5h12v9a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V5z" />
+                </svg></div>
+            </div>
+          </div>
+        </button>
+      </div>
+    </section>
+    <TheFooter />
+  </main>
 </template>
-
-<script setup>
- const rings = [
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/W10028-Y-1_480x.jpg?v=1684836802'},
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/WG10012-Y-1_480x.jpg?v=1693888485'},
-  {title:'Acacia Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/W11064-_3_480x.jpg?v=1690536483'},
-  {title:'Annalise Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/WG10011-Y-1_480x.jpg?v=1693549528'},
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/W10559-_3_480x.jpg?v=1684930254'},
-  {title:'Acacia Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/products/W10452-Y-1_480x.jpg?v=1675751902'},
-  {title:'Pari Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/KFLR10580-Y-1_480x.jpg?v=1688111024'},
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/KFLR10180-Y-1_480x.jpg?v=1689250878'},
-  {title:'Annalise Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/WG10011-Y-1_480x.jpg?v=1693549528'},
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/W10559-_3_480x.jpg?v=1684930254'},
-  {title:'Acacia Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/products/W10452-Y-1_480x.jpg?v=1675751902'},
-  {title:'Pari Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/KFLR10580-Y-1_480x.jpg?v=1688111024'},
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/KFLR10180-Y-1_480x.jpg?v=1689250878'},
-  {title:'Acacia Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/W11064-_3_480x.jpg?v=1690536483'},
-  {title:'Annalise Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/WG10011-Y-1_480x.jpg?v=1693549528'},
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/W10559-_3_480x.jpg?v=1684930254'},
-  {title:'Acacia Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/products/W10452-Y-1_480x.jpg?v=1675751902'},
-  {title:'Pari Ring',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/KFLR10580-Y-1_480x.jpg?v=1688111024'},
-
-]
-
-
-</script>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style>

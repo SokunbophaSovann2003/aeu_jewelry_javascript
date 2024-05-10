@@ -20,6 +20,11 @@ const router = createRouter({
       component: () => import('../views/ring/RingView.vue')
     },
     {
+      path: '/earring',
+      name: 'earring',
+      component: () => import('../views/EarringView.vue')
+    },
+    {
       path: '/ring-detail',
       name: 'ringDetail',
       component: () => import('../views/ring/RingDetail.vue')
@@ -32,26 +37,47 @@ const router = createRouter({
     {
       path: '/necklace-detail',
       name: 'necklaceDetail',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/necklace/NecklaceDetail.vue')
     },
     {
       path: '/wishlist',
       name: 'wishlist',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/WishlistView.vue')
     },
     {
       path: '/cart',
       name: 'cart',
-      // route level code-splitting
-      // this generates a separate chunk (About.[hash].js) for this route
-      // which is lazy-loaded when the route is visited.
       component: () => import('../views/ShoppingCartView.vue')
+    },
+    {
+      path: '/login',
+      name: 'login',
+      component: () => import('../views/LoginView.vue')
+    },
+    {
+      path: '/register',
+      name: 'register',
+      component: () => import('../views/RegisterView.vue')
+    },
+    {
+      path: '/forgetPassword',
+      name: 'forgetPassword',
+      component: () => import('../views/ForgetPasswordView.vue')
+    },
+    {
+      path: '/detail',
+      name: 'detail',
+      component: () => import('../views/DetailView.vue')
+    },
+    {
+      path: '/profile',
+      name: 'profile',
+      component: () => import('../views/ProfileView.vue')
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: () => import('../views/ContactView.vue')
     }
   ]
 })

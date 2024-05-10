@@ -1,0 +1,2 @@
+"use strict";(self["webpackChunkJewellery_shop"]=self["webpackChunkJewellery_shop"]||[]).push([[788],{6788:function(e,l,t){t.r(l),t.d(l,{default:function(){return k}});var n=t(6768);const u=(0,n.Lk)("h1",null,"Hello!",-1),a=(0,n.Lk)("p",null,"My Name Soklay",-1),o=(0,n.Lk)("div",{class:"container m-auto"},[(0,n.Lk)("div",{class:"title font-bold text-center text-2xl"},[(0,n.Lk)("h3",null,"About Page")])],-1),s=[u,a,o];var r={__name:"AboutView",setup(e){return(e,l)=>((0,n.uX)(),(0,n.CE)("main",null,s))}};const c=r;var k=c}}]);
+//# sourceMappingURL=788.2890615f.js.map
