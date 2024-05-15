@@ -24,7 +24,6 @@ export default {
                 localStorage.setItem("user", JSON.stringify(user));
                 this.$router.push("/")
             }
-
         },
     }
 }

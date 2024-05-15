@@ -1,98 +1,64 @@
 <template>
     <TheHeader></TheHeader>
-    <section class="h-screen py-10 m-auto">
-        <div class="lg:w-[80%] md:w-[90%] xs:w-[96%] mx-auto flex gap-4">
-            <div class="lg:w-[88%] md:w-[80%] sm:w-[88%] xs:w-full mx-auto shadow-2xl p-4 rounded-xl h-fit self-center">
-                <div class="">
-                    <h1
-                        class="lg:text-3xl md:text-2xl sm:text-xl xs:text-xl font-serif font-extrabold mb-2 ">
-                        Profile
-                    </h1>
-                    <form>
-                        <div
-                            class="w-full items-center">
-                            <div
-                                class="mx-auto flex justify-center w-[141px] h-[141px] rounded-full bg-[url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w0NzEyNjZ8MHwxfHNlYXJjaHw4fHxwcm9maWxlfGVufDB8MHx8fDE3MTEwMDM0MjN8MA&ixlib=rb-4.0.3&q=80&w=1080')] bg-cover bg-center bg-no-repeat">
 
-                                <div class="rounded-full w-6 h-6 text-center ml-28 mt-4">
-
-                                    <input type="file" name="profile" id="upload_profile" hidden required>
-
-                                    <label for="upload_profile">
-                                        <svg data-slot="icon" class="w-6 h-5 text-blue-700" fill="none"
-                                            stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z">
-                                            </path>
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z">
-                                            </path>
-                                        </svg>
-                                    </label>
+    <section class="h-screen w-full m-auto">
+        <div class="flex w-full h-full justify-center items-center gap-4 py-12">
+            <div class="flex bg-white w-4/5 h-96 rounded-lg items-center md:flex-row">
+                <div class="relative w-1/4 flex justify-center items-center">
+                    <img src="https://i.pinimg.com/736x/7f/9f/b6/7f9fb60382ac715c11ae6d5eeaf9b070.jpg"
+                        alt="shopping image"
+                        class="object-cover w-full h-48 md:h-full rounded-t-lg md:rounded-l-lg md:rounded-t-none">
+                </div>
+                <form class="ml-24 w-3/4">
+                    <div class="flex flex-wrap">
+                        <h1 class="flex-auto text-4xl font-semibold text-black">Hello, {{ userInfo.name }}</h1>
+                    </div>
+                    <hr class="mt-10">
+                    <p class="text-sm text-black mt-10"><strong>User Name : </strong>{{ userInfo.name }}</p>
+                    <p class="text-sm text-black mt-4"><strong>Email Address : </strong>{{ userInfo.email }}</p>
+                    <div @click="showPopup"
+                        class="bg-gray-800 hover:bg-gray-600 text-white font-bold mt-8 py-2 px-3 cursor-pointer rounded w-28">
+                        Edit Profile
+                    </div>
+                </form>
+                <div>
+                    <div v-if="isPopupVisible" class="popup">
+                        <div class="w-5/12 items-center justify-center flex py-20 rounded-xl  bg-white">
+                            <div class="flex flex-col w-full items-center">
+                                <h1 class="text-2xl xl:text-3xl font-extrabold">
+                                    User Info
+                                </h1>
+                                <div class="w-full flex-1 mt-10">
+                                    <div class="mx-auto w-8/12">
+                                        <div class="mb-2">
+                                            <label for="name" class="">User Name</label>
+                                            <input ref="name" id="name" type="text" placeholder="Name"
+                                                autocomplete="false"
+                                                class="w-full px-4 py-2 border-2 placeholder:text-gray-800 rounded-md outline-none dark:placeholder:text-gray-300   focus:ring-4  border-gray-800 focus:border-gray-400 ring-gray-100 "
+                                                name="name" :value="userInfo.name">
+                                        </div>
+                                        <div class="mb-2">
+                                            <label for="email_address" class="">Email Address</label>
+                                            <input ref="email" id="email_address" type="email"
+                                                placeholder="Email Address" autocomplete="false"
+                                                class="w-full px-4 py-2 border-2 placeholder:text-gray-800 rounded-md outline-none dark:placeholder:text-gray-300   focus:ring-4  border-gray-800 focus:border-gray-400 ring-gray-100 "
+                                                name="email" :value="userInfo.email">
+                                        </div>
+                                        <div class="mt-16 flex justify-evenly items-center m-auto w-full">
+                                            <div @click="closePopup"
+                                                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-8 cursor-pointer rounded">
+                                                Cancel
+                                            </div>
+                                            <div @click="validations"
+                                                class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-3 cursor-pointer rounded">
+                                                Edit Profile
+                                            </div>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
-                            <div class="flex justify-end">
-                                <!--  -->
-                                <input type="file" name="profile" id="upload_cover" hidden required>
-
-                                <div
-                                    class="bg-white flex items-center gap-1 rounded-tl-md px-2 text-center font-semibold">
-                                    <label for="upload_cover"
-                                        class="inline-flex items-center gap-1 cursor-pointer">Cover
-
-                                        <svg data-slot="icon" class="w-6 h-5 text-blue-700" fill="none"
-                                            stroke-width="1.5" stroke="currentColor" viewBox="0 0 24 24"
-                                            xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M6.827 6.175A2.31 2.31 0 0 1 5.186 7.23c-.38.054-.757.112-1.134.175C2.999 7.58 2.25 8.507 2.25 9.574V18a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9.574c0-1.067-.75-1.994-1.802-2.169a47.865 47.865 0 0 0-1.134-.175 2.31 2.31 0 0 1-1.64-1.055l-.822-1.316a2.192 2.192 0 0 0-1.736-1.039 48.774 48.774 0 0 0-5.232 0 2.192 2.192 0 0 0-1.736 1.039l-.821 1.316Z">
-                                            </path>
-                                            <path stroke-linecap="round" stroke-linejoin="round"
-                                                d="M16.5 12.75a4.5 4.5 0 1 1-9 0 4.5 4.5 0 0 1 9 0ZM18.75 10.5h.008v.008h-.008V10.5Z">
-                                            </path>
-                                        </svg>
-                                    </label>
-                                </div>
-
-                            </div>
                         </div>
-                        <h2 class="text-center mt-1 font-semibold dark:text-gray-300">Upload Profile and Cover Image
-                        </h2>
-                        <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
-                            <div class="w-full  mb-4 mt-6">
-                                <label for="" class="mb-2 dark:text-gray-300">First Name</label>
-                                <input type="text"
-                                    class="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                                    placeholder="First Name">
-                            </div>
-                            <div class="w-full  mb-4 lg:mt-6">
-                                <label for="" class=" dark:text-gray-300">Last Name</label>
-                                <input type="text"
-                                    class="mt-2 p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800"
-                                    placeholder="Last Name">
-                            </div>
-                        </div>
-
-                        <div class="flex lg:flex-row md:flex-col sm:flex-col xs:flex-col gap-2 justify-center w-full">
-                            <div class="w-full">
-                                <h3 class="dark:text-gray-300 mb-2">Sex</h3>
-                                <select
-                                    class="w-full text-grey border-2 rounded-lg p-4 pl-2 pr-2 dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800">
-                                    <option disabled value="">Select Sex</option>
-                                    <option value="Male">Male</option>
-                                    <option value="Female">Female</option>
-                                </select>
-                            </div>
-                            <div class="w-full">
-                                <h3 class="dark:text-gray-300 mb-2">Date Of Birth</h3>
-                                <input type="date"
-                                    class="text-grey p-4 w-full border-2 rounded-lg dark:text-gray-200 dark:border-gray-600 dark:bg-gray-800">
-                            </div>
-                        </div>
-                        <div class="w-full rounded-lg bg-blue-500 mt-4 text-white text-lg font-semibold">
-                            <button type="submit" class="w-full p-4">Submit</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -100,7 +66,74 @@
     <!-- <TheFooter></TheFooter> -->
 </template>
 
+
 <script setup>
-    import TheHeader from '@/components/TheHeader.vue';
-    // import TheFooter from '@/components/TheFooter.vue';
+import TheHeader from '@/components/TheHeader.vue';
+// import TheFooter from '@/components/TheFooter.vue';
 </script>
+
+
+<script>
+export default {
+    data() {
+        const data = localStorage.getItem("user")
+        const userInfo = JSON.parse(data)
+        return {
+            isPopupVisible: false,
+            userInfo: userInfo
+        };
+    },
+    methods: {
+        validations() {
+            const email = this.$refs.email.value;
+            const name = this.$refs.name.value;
+            if (email.length < 1 || name.length < 1) {
+                window.alert("Please check your input field")
+            } else {
+                this.updateUserInfo();
+            }
+        },
+        updateUserInfo() {
+            const email = this.$refs.email.value;
+            const name = this.$refs.name.value;
+            const data = localStorage.getItem("user");
+            if (data == null) {
+                window.alert("User not found. Please try again!")
+            } else {
+                this.userInfo.name = name;
+                this.userInfo.email = email;
+                localStorage.setItem("user", JSON.stringify(this.userInfo));
+                window.location.reload();
+            }
+        },
+        showPopup() {
+            console.log("THis is my pop up");
+            this.isPopupVisible = true;
+        },
+        closePopup() {
+            this.isPopupVisible = false;
+        }
+    }
+};
+</script>
+
+<style>
+/* Styles for the popup */
+.popup {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.popup-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 5px;
+}
+</style>

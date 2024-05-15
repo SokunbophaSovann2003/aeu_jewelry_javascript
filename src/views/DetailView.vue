@@ -57,7 +57,7 @@
 
         <div v-for="(product, index) in products" :key="index"
             class="w-72 bg-white shadow-md rounded-xl duration-500 hover:scale-105 hover:shadow-xl">
-            <button @click="onProductDetail(product)">
+            <button @click="productDetail(product)">
                 <img :src="product.image" alt="Product" class="h-80 w-72 object-cover rounded-t-xl" />
                 <div class="px-4 py-3 w-72 text-start">
                     <span class="text-gray-400 mr-3 uppercase text-xs items-start">{{ product.brand }}</span>
@@ -92,7 +92,6 @@ export default {
     data() {
         const data = localStorage.getItem("detail");
         const product = JSON.parse(data);
-        console.log("My profile iss ", product);
         return {
             products: myData,
             product: product,
@@ -112,4 +111,4 @@ export default {
         }
     }
 };
-</script>async async
+</script>

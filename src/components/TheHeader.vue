@@ -23,7 +23,7 @@
 </script>
 
 <template>
-  <header class="h-24 sm:h-32 flex items-center z-30 w-full fixed ">
+  <header class="h-24 sm:h-32 flex items-center z-30 w-full fixed">
     <div class="container mx-auto px-6 flex items-center justify-between">
       <RouterLink to="/" class="uppercase text-gray-800 font-black text-3xl">
         Logo
@@ -33,7 +33,7 @@
           <a href="#" class="py-2 px-6 flex">
             <RouterLink to="/earring"
               class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
-              Earing</RouterLink>
+              Earring</RouterLink>
           </a>
           <a href="#" class="py-2 px-6 flex">
             <RouterLink to="/ring"
@@ -52,7 +52,15 @@
             </RouterLink>
           </a>
           <a href="#" class="py-2 px-6 flex">
-            Product
+            <RouterLink to="/products"
+              class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              Product
+            </RouterLink>
+          </a>
+          <a href="#" class="py-2 px-6 flex">
+            <RouterLink to="/history"
+              class="block py-2 px-3 md:p-0 text-gray-900 rounded hover:bg-gray-100 md:hover:bg-transparent md:border-0 md:hover:text-blue-700 dark:text-white md:dark:hover:text-blue-500 dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent">
+              History</RouterLink>
           </a>
           <a href="#" class="py-2 px-6 flex">
             <RouterLink to="/contact"

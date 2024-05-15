@@ -9,12 +9,20 @@ export function addToCard(data) {
     console.log("this is my card ", card);
     if (card == null) {
         const newCard = [];
-        newCard.push(data);
+        const card = {
+            item: data,
+            qty: 1
+        }
+        newCard.push(card);
         localStorage.setItem("card", JSON.stringify(newCard));
     } else {
         const cardData = JSON.parse(card);
         console.log("this is my ", cardData);
-        cardData.push(data);
+        const newCard = {
+            item: data,
+            qty: 1
+        }
+        cardData.push(newCard);
         localStorage.setItem("card", JSON.stringify(cardData))
     }
     alert("Success add to card!")
