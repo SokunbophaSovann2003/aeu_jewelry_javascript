@@ -179,6 +179,15 @@ export const myData = [
         type: "ring",
         image: "https://images.unsplash.com/photo-1581445894358-c51657851bba?q=80&w=2849&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
     },
+    {
+        title: "Ring",
+        brand: "DIOR",
+        descriptions: "In publishing and graphic design, Lorem ipsum is a placeholder text commonly used to demonstrate the visual form of a document or a typeface without relying on meaningful content",
+        isAviable: "In strock",
+        price: "850",
+        type: "ring",
+        image: "https://images.unsplash.com/photo-1581445894358-c51657851bba?q=80&w=2849&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+    },
     
 ];
 
