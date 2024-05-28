@@ -31,7 +31,7 @@
         aria-label="Global"
       >
         <div class="flex lg:flex-1">
-          <a href="#" class="-m-1.5 p-1.5">
+          <a href="/" class="-m-1.5 p-1.5">
             <span class="sr-only">Your Company </span>
             <img
               class="h-8 w-auto"
@@ -266,10 +266,11 @@
             
           </div>
 
-          <RouterLink to="/"  class="text-sm font-semibold leading-6 text-gray-900" >New In</RouterLink>
+          <!-- <RouterLink to="/"  class="text-sm font-semibold leading-6 text-gray-900" >New In</RouterLink> -->
           <RouterLink to="/ring" class="text-sm font-semibold leading-6 text-gray-900">Ring</RouterLink>
           <RouterLink to="/earring" class="text-sm font-semibold leading-6 text-gray-900">Earring</RouterLink>
           <RouterLink to="/necklace" class="text-sm font-semibold leading-6 text-gray-900">Necklace</RouterLink>
+          <RouterLink to="/bracelet" class="text-sm font-semibold leading-6 text-gray-900">Bracelet</RouterLink>
           <RouterLink to="/about" class="text-sm font-semibold leading-6 text-gray-900">About</RouterLink>
           <RouterLink to="/products" class="text-sm font-semibold leading-6 text-gray-900">Products</RouterLink>
           <RouterLink to="/contact" class="text-sm font-semibold leading-6 text-gray-900">contact</RouterLink>

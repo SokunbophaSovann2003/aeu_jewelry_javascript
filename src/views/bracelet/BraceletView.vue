@@ -1,93 +1,3 @@
-<!-- <template>
-  <div class="banner mb-5">
-    <img
-      class="w-[100%] h-auto max-w-full"
-      src="@/assets/images/necklace/banner.png"
-      alt="image description"
-    />
-  </div>
-  <div class="Necklace">
-    <div class="container m-auto">
-      <div  class="mt-4 mb-5 grid grid-cols-5 gap-4">
-        <div v-for="(necklace,index) in necklaces" :key="index"
-          class="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-200 dark:border-gray-200"
-        >
-          <RouterLink to="/necklace-detail">
-            <img
-              class="h-72 p-1 rounded-t-lg"
-              :src="necklace.image"
-              alt="product image"
-            />
-          </RouterLink>
-          <div class="px-5 pb-5">
-            <RouterLink to="/necklace-detail">
-              <h5
-                class="text-xl font-semibold tracking-tight text-gray-900 dark:text-white"
-              >
-               
-                {{ necklace.title }}
-              </h5>
-              <p
-                class="text-xl  tracking-tight text-gray-800 dark:text-white"
-              >
-               
-                {{ necklace.desc }}
-            </p>
-            </RouterLink>
-          
-            <div class="flex items-center justify-between">
-              <span class="text-2xl font-bold text-gray-900 dark:text-white"
-                >${{ necklace.price }}</span
-              >
-              <a
-                href="#"
-                class=" font-medium text-sm px-5 py-2.5 text-center focus:outline-none bg-white rounded-lg border border-gray-200 hover:bg-gray-100 hover:text-blue-700 focus:z-10 focus:ring-4 focus:ring-gray-100 dark:focus:ring-gray-700 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:text-white dark:hover:bg-gray-700 text-gray-900"
-                >Show Now</a
-              >
-            </div>
-          </div>
-        </div>
-        
-      </div>
-    </div>
-  </div>
-</template>
-
-<script setup>
- const necklaces = [
-  {title:'Valerie Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/KFPS20097PB-Y-1_480x.jpg?v=1687864828'},
-  {title:'Alice Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'//kisna.com/cdn/shop/files/KFPS20022PG-Y-1_480x.jpg?v=1687850264'},
-  {title:'Kelci Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'//kisna.com/cdn/shop/files/KFPS20080PB-Y-1_480x.jpg?v=1691132399'},
-  {title:'Charlotte Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'//kisna.com/cdn/shop/files/KFPS20015PG-Y-1_480x.jpg?v=1687849463'},
-  {title:'Alice Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'//kisna.com/cdn/shop/files/KFPS20020PG-Y-1_480x.jpg?v=1687849731'},
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'//kisna.com/cdn/shop/files/KFPS20021PG-Y-1_480x.jpg?v=1687849876'},
-  {title:'Charlotte Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'//kisna.com/cdn/shop/products/W20281-Y-1_480x.jpg?v=1681971119'},
-  {title:'Alice Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/products/W20316-Y-1_480x.jpg?v=1680165363'},
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/KFPS20069P-Y-1_480x.jpg?v=1687859889'},
-  {title:'Charlotte Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'//kisna.com/cdn/shop/files/KFPS20020PG-Y-1_480x.jpg?v=1687849731'},
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'//kisna.com/cdn/shop/files/KFPS20021PG-Y-1_480x.jpg?v=1687849876'},
-  {title:'Alice Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'//kisna.com/cdn/shop/products/W20281-Y-1_480x.jpg?v=1681971119'},
-  {title:'Charlotte Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/products/W20316-Y-1_480x.jpg?v=1680165363'},
-  {title:'Alice Pendant',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/products/W20316-Y-1_480x.jpg?v=1680165363'},
-  {title:'Dimond',desc:'Dimond Tradition Gold Bracelet',price:'300 ',image:'https://kisna.com/cdn/shop/files/KFPS20069P-Y-1_480x.jpg?v=1687859889'},
- 
-]
-
-
-</script>
-
-<style>
-@media (min-width: 1024px) {
-  .about {
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-  }
-}
-</style> -->
-
-
-
 
 
 <template>
@@ -97,7 +7,7 @@
       <div class="sm:w-2/3 lg:w-2/5 flex flex-col relative z-20">
         <span class="w-20 h-2 bg-white mb-12"></span>
         <h1 class="font-bebas-neue uppercase text-6xl sm:text-8xl font-black flex flex-col leading-none text-gray-800">
-          NECKLACE
+          Bracelet
         </h1>
         <p class="text-sm sm:text-base text-gray-700">
           Dimension of reality that makes change possible and understandable. An indefinite and homogeneous
@@ -105,7 +15,7 @@
         </p>
       </div>
       <div class="hidden sm:block sm:w-1/3 lg:w-3/5 relative">
-        <img src="https://media.istockphoto.com/id/522545031/photo/silver-necklace-and-pendant-on-white-background.jpg?s=612x612&w=0&k=20&c=0sk1F6SeCbSKR0RH4V6EbyB94PUeVTgcneQhVH3XqJ8=" class="max-w-xs md:max-w-sm m-auto" />
+        <img src="https://media.istockphoto.com/id/1497265898/photo/emerald-white-gold-ring.jpg?s=612x612&w=0&k=20&c=J49fcAePhMyv6AuvOzIKfggySkBJsVJD-zaEE-cdpy0=" class="max-w-xs md:max-w-sm m-auto" />
       </div>
     </div>
   </div>
@@ -142,8 +52,22 @@
   </section>
 
   <!-- =================================================================================== -->
-  <!-- =================================================================================== -->
-  <div class="text-center p-10 mt-40">
+  <!-- <div class="text-center p-10 mt-40">
+    <h1 class="font-bold text-4xl mb-4">Responsive Product card grid</h1>
+    <h1 class="text-3xl">Tailwind CSS</h1>
+  </div>
+  <div class="p-5 sm:p-8">
+    <div class="columns-1 gap-5 sm:columns-2 sm:gap-8 md:columns-3 lg:columns-4 [&>img:not(:first-child)]:mt-8">
+      <img v-for="(necklace, index) in previews" :key="index" :src="necklace" />
+    </div>
+  </div> -->
+
+  <hr class="mt-20">
+ 
+
+
+   <!-- =================================================================================== -->
+   <div class="text-center p-10 mt-40">
     <h1 class="font-bold text-4xl mb-4">EARING IN YOUR DREAM</h1>
     <h1 class="text-3xl">Show us your passions, Show us your fashion, Show us yourself</h1>
   </div>
@@ -153,10 +77,6 @@
     </div>
   </div>
 
-  <hr class="mt-20">
-  <TheCustomer/>
-
-  <hr class="mt-20">
   <section id="testimonials" aria-label="What our customers are saying" class="bg-slate-50 py-20 sm:py-32">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
       <div class="mx-auto max-w-2xl md:text-center">
@@ -246,8 +166,8 @@
     </div>
   </section>
 
-
-  
+  <hr class="mt-20">
+  <TheCustomer/>
 
 
   <TheFooter />
@@ -288,19 +208,19 @@ import TheFooter from '@/components/TheFooter.vue';
 <script>
 import { myData } from '@/data/data';
 import { onProductDetail } from '@/funcations/function';
-import { necklace } from '@/data/data';
+import { bracelet } from '@/data/data';
 
 export default {
   data() {
-    let necklaceList = [];
-    for (const necklace of myData) {
-      if (necklace.type == "necklace") {
-        necklaceList.push(necklace);
+    let braceletList = [];
+    for (const bracelet of myData) {
+      if (bracelet.type == "bracelet") {
+        braceletList.push(bracelet);
       }
     }
     return {
-      products: necklaceList,
-      previews: necklace
+      products: braceletList,
+      previews: bracelet
     };
   },
   methods: {

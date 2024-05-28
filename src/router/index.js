@@ -40,6 +40,16 @@ const router = createRouter({
       component: () => import('../views/necklace/NecklaceDetail.vue')
     },
     {
+      path: '/bracelet',
+      name: 'bracelet',
+      component: () => import('../views/bracelet/BraceletView.vue')
+    },
+    {
+      path: '/bracelet-detail',
+      name: 'braceletDetail',
+      component: () => import('../views/bracelet/BraceletDetail.vue')
+    },
+    {
       path: '/wishlist',
       name: 'wishlist',
       component: () => import('../views/WishlistView.vue')
